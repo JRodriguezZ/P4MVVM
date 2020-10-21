@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BatallaFragment">
+
+    <EditText
+        android:id="@+id/vidaJ1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Vida Jugador 1"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <EditText
+        android:id="@+id/fuerzaJ1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Fuerza Jugador 1"/>
+    <EditText
+        android:id="@+id/vidaJ2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Vida Jugador 2"/>
+    <EditText
+        android:id="@+id/fuerzaJ2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Fuerza Jugador 2"/>
+    <Button
+        android:id="@+id/pelea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fight!"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
