@@ -6,32 +6,101 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BatallaFragment">
 
+    <TextView
+        android:id="@+id/Jugador1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PLAYER 1"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/Jugador2"
+        app:layout_constraintBottom_toTopOf="@+id/vidaJ1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Jugador2"
+        android:text="PLAYER 2"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/Jugador1"
+        app:layout_constraintBottom_toTopOf="@+id/vidaJ2"/>
     <EditText
         android:id="@+id/vidaJ1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Vida Jugador 1"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:hint="Vida"
+        app:layout_constraintTop_toBottomOf="@id/Jugador1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/vidaJ2"
+        app:layout_constraintBottom_toTopOf="@+id/fuerzaJ1"/>
     <EditText
         android:id="@+id/fuerzaJ1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Fuerza Jugador 1"/>
+        android:hint="Fuerza"
+        app:layout_constraintTop_toBottomOf="@+id/vidaJ1"
+        app:layout_constraintRight_toLeftOf="@+id/fuerzaJ2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/pelea"/>
     <EditText
         android:id="@+id/vidaJ2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Vida Jugador 2"/>
+        android:hint="Vida"
+        app:layout_constraintTop_toBottomOf="@id/Jugador2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/vidaJ1"
+        app:layout_constraintBottom_toTopOf="@+id/fuerzaJ2"/>
     <EditText
         android:id="@+id/fuerzaJ2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Fuerza Jugador 2"/>
+        android:hint="Fuerza"
+        app:layout_constraintTop_toBottomOf="@+id/vidaJ2"
+        app:layout_constraintLeft_toRightOf="@+id/fuerzaJ1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/pelea"/>
     <Button
         android:id="@+id/pelea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fight!"/>
+        android:text="Fight!"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fuerzaJ1"
+        app:layout_constraintBottom_toBottomOf="@+id/cualquiera"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginHorizontal="50dp"
+        android:paddingVertical="22dp"/>
+
+    <FrameLayout
+        android:id="@+id/cualquiera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pelea"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <TextView
+            android:id="@+id/resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginVertical="20dp"/>
+        <ProgressBar
+            android:id="@+id/calculando"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:gravity="center"/>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
