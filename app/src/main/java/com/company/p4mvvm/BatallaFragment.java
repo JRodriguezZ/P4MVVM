@@ -43,11 +43,48 @@ public class BatallaFragment extends Fragment {
             }
         });
 
+
+        peleaViewModel.errorVida.observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer vidaMinima) {
+                if (vidaMinima != null) {
+                    binding.vidaJ1.setError("La vida no puede ser inferor a " + vidaMinima);
+                } else {
+                    binding.vidaJ1.setError(null);
+                }
+
+                if (vidaMinima != null){
+                    binding.vidaJ2.setError("La vida no puede ser inferor a " + vidaMinima);
+                } else {
+                    binding.vidaJ2.setError(null);
+                }
+            }
+        });
+
+        peleaViewModel.errorFuerza.observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer fuerzaMinima) {
+                if (fuerzaMinima != null) {
+                    binding.fuerzaJ1.setError("La fuerza no puede ser inferior a " + fuerzaMinima);
+                } else {
+                    binding.fuerzaJ1.setError(null);
+                }
+
+                if (fuerzaMinima != null){
+                    binding.fuerzaJ2.setError("La fuerza no puede ser inferior a " + fuerzaMinima);
+                } else {
+                    binding.fuerzaJ2.setError(null);
+                }
+            }
+        });
+
         peleaViewModel.resultadoCombate.observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String ganador) {
                 binding.resultado.setText(ganador + " es el ganador de la pelea!");
             }
         });
+
+
     }
 }

@@ -31,7 +31,7 @@ public class SimuladorPelea {
         int fuerzaMinima = 0;
 
         try {
-            Thread.sleep(10000);
+            Thread.sleep(2000);
             vidaMinima = 1;
             fuerzaMinima = 1;
         } catch (InterruptedException e) {}

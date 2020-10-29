@@ -9,7 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-class PeleaViewModel extends AndroidViewModel {
+public class PeleaViewModel extends AndroidViewModel {
 
     Executor executor;
     SimuladorPelea simulador;
